@@ -1,0 +1,82 @@
+{
+  "evaluation_method": "Stratified random hold-out split (80/20); TF-IDF fitted on the training split only (scikit-learn Pipeline).",
+  "test": {
+    "n_samples": 7589,
+    "accuracy": 0.9893266570035578,
+    "per_class": {
+      "FAKE": {
+        "precision": 0.991848617176128,
+        "recall": 0.9846820809248555,
+        "f1": 0.9882523567802756,
+        "support": 3460
+      },
+      "REAL": {
+        "precision": 0.9872412132883968,
+        "recall": 0.9932186970210705,
+        "f1": 0.990220934444042,
+        "support": 4129
+      }
+    },
+    "macro_f1": 0.9892366456121588,
+    "weighted_f1": 0.9893234145182768,
+    "roc_auc": 0.9992459230285713,
+    "confusion_matrix": [
+      [
+        3407,
+        53
+      ],
+      [
+        28,
+        4101
+      ]
+    ],
+    "confusion_labels": [
+      "FAKE",
+      "REAL"
+    ],
+    "classification_report": "              precision    recall  f1-score   support\n\n        FAKE     0.9918    0.9847    0.9883      3460\n        REAL     0.9872    0.9932    0.9902      4129\n\n    accuracy                         0.9893      7589\n   macro avg     0.9895    0.9890    0.9892      7589\nweighted avg     0.9893    0.9893    0.9893      7589\n"
+  },
+  "train": {
+    "accuracy": 0.9954692556634305,
+    "macro_f1": 0.9954246202828279,
+    "note": "Training-set scores are reported separately and are NOT a measure of generalisation."
+  },
+  "cross_validation": null,
+  "class_balance": {
+    "train": {
+      "counts": {
+        "FAKE": 13945,
+        "REAL": 16955
+      },
+      "fractions": {
+        "FAKE": 0.4513,
+        "REAL": 0.5487
+      }
+    },
+    "test": {
+      "counts": {
+        "FAKE": 3460,
+        "REAL": 4129
+      },
+      "fractions": {
+        "FAKE": 0.4559,
+        "REAL": 0.5441
+      }
+    }
+  },
+  "sizes": {
+    "train": 30900,
+    "test": 7589
+  },
+  "leakage": {
+    "test_rows_before": 7725,
+    "exact_duplicates_of_train": 0,
+    "exact_or_near_duplicates_of_train": 136,
+    "near_duplicate_threshold": 0.9,
+    "removed_from_test": 136,
+    "test_rows_after": 7589
+  },
+  "is_demo": false,
+  "calibrated": false,
+  "model_version": "20261020-120721-30130cb0"
+}

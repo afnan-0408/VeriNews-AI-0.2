@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.pytest_cache/
+# datasets, models, local database: keep out of Git
+data/*
+!data/.gitkeep
+!data/demo_dataset.csv
+artifacts/*
+!artifacts/.gitkeep
+*.sqlite3
+*.joblib
+.streamlit/secrets.toml
+
+# Required trained model for cloud deployment
+!artifacts/model.joblib
+!artifacts/metadata.json
+!artifacts/metrics.json

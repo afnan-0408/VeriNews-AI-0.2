@@ -1,0 +1,13 @@
+# Core ML stack - versions below were INSTALLED AND TESTED in the build sandbox (Python 3.12):
+scikit-learn==1.8.0
+numpy==2.4.4
+pandas==3.0.2
+joblib==1.5.3
+# UI / API stack - NOT installable in the build sandbox (no network), so these are lower-bounded, not exact.
+# After your first successful install run `pip freeze > requirements.lock.txt` and commit/pin that file.
+streamlit>=1.50
+plotly>=6.0
+fastapi>=0.115
+uvicorn>=0.30
+pydantic>=2.8
+python-multipart>=0.0.9

@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "app": "VeriNews-AI",
+  "trained_at": "2026-10-20T12:07:21+00:00",
+  "algorithm": "TF-IDF + Logistic Regression (liblinear)",
+  "classes": [
+    "FAKE",
+    "REAL"
+  ],
+  "label_mapping": {
+    "FAKE": 0,
+    "REAL": 1
+  },
+  "calibrated": false,
+  "is_demo": false,
+  "uses_title": true,
+  "split": {
+    "strategy": "random",
+    "test_size": 0.2,
+    "seed": 42,
+    "n_train": 30900,
+    "n_test": 7589
+  },
+  "dataset": {
+    "name": "ISOT (Fake.csv + True.csv)",
+    "uses_title": true,
+    "rows_used": 38625,
+    "subsampled_from": null,
+    "cleaning": {
+      "rows_before": 44898,
+      "rows_after": 38625,
+      "dropped_missing_text": 631,
+      "dropped_too_short": 41,
+      "dropped_unknown_label": 0,
+      "dropped_label_conflicts": 0,
+      "dropped_duplicates": 5601,
+      "unknown_label_values": [],
+      "class_counts": {
+        "REAL": 21194,
+        "FAKE": 17431
+      },
+      "agency_prefix_stripped": false
+    }
+  },
+  "config": {
+    "test_size": 0.2,
+    "random_state": 42,
+    "max_features": 20000,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "C": 1.0,
+    "max_iter": 1000,
+    "class_weight": "balanced",
+    "cv_folds": 0,
+    "max_rows": 40000,
+    "split_strategy": "random",
+    "group_col": null,
+    "date_col": null,
+    "near_duplicate_threshold": 0.9,
+    "remove_leaked_test_rows": true
+  },
+  "versions": {
+    "python": "3.14.7",
+    "scikit_learn": "1.8.0",
+    "numpy": "2.4.4",
+    "pandas": "3.0.2",
+    "joblib": "1.5.3"
+  },
+  "limitations": [
+    "The model scores writing patterns learned from its training data; it does not verify facts.",
+    "A random split can overestimate performance when related articles appear on both sides of the split.",
+    "Datasets may carry source, topic, period and publisher bias that the model can exploit as shortcuts.",
+    "Scores are uncalibrated model outputs, not probabilities of truth."
+  ],
+  "model_sha256": "30130cb0f1560630c61e25323de327f97a023aef75b9d2d45cab3e0b09e1386c",
+  "model_version": "20261020-120721-30130cb0"
+}
